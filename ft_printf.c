@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:03:46 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 19:10:14 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:39:59 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ size_t	ft_types(const char *str, size_t i, va_list param)
 		count += ft_putchar('%');
 	else if (str[i] == 'i' || str[i] == 'd')
 		count += ft_putdec(va_arg(param, int));
+	else if (str[i] == 'u')
+		count += ft_putdeclong(va_arg(param, unsigned int));
 	return (count);
 }
 

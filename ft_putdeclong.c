@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putdeclong.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 20:00:24 by dbredykh         ###   ########.fr       */
+/*   Created: 2023/05/11 18:49:42 by dbredykh          #+#    #+#             */
+/*   Updated: 2023/05/11 20:00:17 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+size_t	ft_putdeclong(unsigned int n)
+{
+	char	*new_str;
+	size_t	len;
 
-int		ft_printf(const char *str, ...);
-size_t	ft_putstr(char *str);
-size_t	ft_putchar(int c);
-size_t	ft_putdec(int n);
-size_t	ft_putdeclong(unsigned int n);
-char	*ft_itoalong(long n);
-
-#endif
+	new_str = ft_itoalong((long)n);
+	len = ft_putstr(new_str);
+	free(new_str);
+	return (len);
+}
