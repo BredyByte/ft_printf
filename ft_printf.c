@@ -6,56 +6,44 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:03:46 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/10 21:23:22 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:51:46 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	ft_types(const char *str, size_t i, va_list param)
 {
-	write(fd, &c, 1);
-}
-
-int	ft_putchar(int c)
-{
-	ft_putchar_fd(c, 1);
-	return (1);
-}
-
-int	ft_types(const char *str, va_list param)
-{
-	int	count;
-
-	if (*str == 'c')
-		count += ft_putchar(va_arg(param, int));
-	return (count);
-}
-
-int	ft_printf(char const *str, ...)
-{
-	va_list	param;
-	int		count;
+	size_t	count;
 
 	count = 0;
-	va_start(param, str);
-	while (*str)
-	{
-		if (*str != '%')
-			count += ft_putchar(*str);
-		else
-		{
-			str++;
-			count += ft_types(str, param);
-		}
-		str++;
-	}
-	va_end(param);
+	if (str[i] == 'c')
+		count += ft_putchar(va_arg(param, int));
+	else if (str[i] == 's')
+		count += ft_putstr(va_arg(param, char *));
 	return (count);
 }
 
-int	main(void)
+int	ft_printf(const char *str, ...)
 {
-	ft_printf("hello %c", '?');
-	return (0);
+	size_t	i;
+	size_t	count;
+	va_list	param;
+
+	va_start(param, str);
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] != '%')
+			count += ft_putchar(str[i]);
+		else
+		{
+			i++;
+			count += ft_types(str, i, param);
+		}
+		i++;
+	}
+	va_end(param);
+	return ((int)count);
 }

@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRC = ft_printf.c
+SRC = ft_putchar.c ft_putstr.c ft_printf.c 
 CC = cc
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
