@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:03:46 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 17:51:46 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:55:38 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_types(const char *str, size_t i, va_list param)
 		count += ft_putchar(va_arg(param, int));
 	else if (str[i] == 's')
 		count += ft_putstr(va_arg(param, char *));
+	else if (str[i] == '%')
+		count += ft_putchar('%');
 	return (count);
 }
 
