@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 19:03:46 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 20:53:15 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:43:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,13 @@ size_t	ft_types(const char *str, size_t i, va_list param)
 	else if (str[i] == 'i' || str[i] == 'd')
 		count += ft_putdec(va_arg(param, int));
 	else if (str[i] == 'u')
-		count += ft_putdeclong(va_arg(param, unsigned int));
+		count += ft_putdeclong(va_arg(param, size_t));
 	else if (str[i] == 'p')
 		count += ft_putvoid(va_arg(param, void *));
+	if (str[i] == 'x')
+		count += ft_puthexa(va_arg(param, size_t), 'x');
+	if (str[i] == 'X')
+		count += ft_puthexa(va_arg(param, size_t), 'X');
 	return (count);
 }
 

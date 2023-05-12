@@ -6,7 +6,6 @@ LIBFT = $(LIBFT_PATH)/libft.a
 OBJ = ${SRC:.c=.o}
 CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
-HEADERS = ft_printf.h libft/libft.h
 REMOVE = rm -rf
 
 all: $(NAME)
