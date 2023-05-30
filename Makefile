@@ -6,6 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = ar -rcs
 REMOVE = rm -rf
 
+
 SRC = ft_putvoid.c ft_puthexa.c ft_itoalong.c ft_putdeclong.c ft_putdec.c ft_putchar.c ft_putstr.c ft_printf.c
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 
@@ -27,7 +28,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make bonus -C $(LIBFT_PATH)
 	cp $(LIBFT) ./$@
-	$(ARFLAGS) $@ $(OBJS)
+	$(ARFLAGS) $@ $(OBJ)
 	@echo "\n$(G)[Compiled $(C)'$@' $(G)successfully]\n$(END)"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/ft_printf.h
@@ -45,3 +46,5 @@ fclean: clean
 	@echo "$(R)[Removed $(C)'$(NAME)' $(R)successfully]\n$(END)"
 
 re: fclean all
+
+.PHONY: all clean fclean re
