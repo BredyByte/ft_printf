@@ -22,6 +22,8 @@ C = \033[36;1m
 Y = \033[33;1m
 END = \033[0m
 
+.SILENT:
+
 all: $(NAME)
 
 $(NAME): $(OBJ)

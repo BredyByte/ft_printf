@@ -6,11 +6,11 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 20:35:54 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 20:41:05 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:54:18 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_puthexa(unsigned long long n, char c)
 {

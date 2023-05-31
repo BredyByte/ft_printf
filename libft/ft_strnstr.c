@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 13:33:37 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/04/22 14:57:54 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:53:51 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		}
 		++s1;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 20:31:01 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/14 12:25:15 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:54:22 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_putvoid(void *p)
 {

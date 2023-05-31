@@ -6,11 +6,11 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 20:27:47 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/05/11 16:29:44 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:54:12 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 size_t	ft_putchar(int c)
 {
