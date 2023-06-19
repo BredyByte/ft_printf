@@ -6,9 +6,6 @@ CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = ar -rcs
 REMOVE = rm -rf
 
-SRC = ft_putvoid.c ft_puthexa.c ft_itoalong.c ft_putdeclong.c ft_putdec.c ft_putchar.c ft_putstr.c ft_printf.c
-OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
-
 LIBFT_PATH = ./libft
 OBJ_PATH = ./obj
 SRC_PATH = ./src
@@ -21,6 +18,9 @@ M = \033[35;1m
 C = \033[36;1m
 Y = \033[33;1m
 END = \033[0m
+
+SRC := $(wildcard $(SRC_PATH)/*.c)rules
+OBJ = $(addprefix $(OBJ_PATH)/, $(notdir $(SRC:.c=.o)))
 
 .SILENT:
 
