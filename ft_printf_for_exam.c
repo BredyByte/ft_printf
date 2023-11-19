@@ -17,8 +17,9 @@ int	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-	return (i);
+	return (123);
 }
+    write(1, "q", 1);
 int	ft_putdec(int num)
 {
 	int	len;
