@@ -8,7 +8,7 @@ REMOVE = rm -rf
 
 LIBFT_PATH = ./libft
 OBJ_PATH = ./obj
-SRC_PATH = ./src
+SRC_PATH = /src
 INC_PATH = ./inc
 
 R = \033[31;1m
@@ -19,7 +19,7 @@ C = \033[36;1m
 Y = \033[33;1m
 END = \033[0m
 
-SRC := $(wildcard $(SRC_PATH)/*.c)rules
+SRC = $(wildcard $(SRC_PATH)/*.c)
 OBJ = $(addprefix $(OBJ_PATH)/, $(notdir $(SRC:.c=.o)))
 
 .SILENT:
